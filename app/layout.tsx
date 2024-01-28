@@ -1,5 +1,4 @@
 import '../styles/globals.css';
-import { ClerkProvider } from '@clerk/nextjs';
 import type { Metadata } from 'next';
 import { Anek_Bangla } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
@@ -45,13 +44,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
-      <html lang="en" className={anek.className}>
-        <body>
-          <Analytics />
-          {children}
-        </body>
-      </html>
-    </ClerkProvider>
+    <html lang="en" className={anek.className}>
+      <body>
+        <Analytics />
+        {children}
+      </body>
+    </html>    
   );
 }

@@ -1,6 +1,5 @@
 import Link from 'next/link';
-import { UserButton, currentUser } from '@clerk/nextjs';
-import { User } from '@clerk/nextjs/server';
+import { User, currentUser } from '../../utils/user';
 
 export default async function Header() {
   const user: User | null = await currentUser();
@@ -21,7 +20,7 @@ export default async function Header() {
             {isLoggedIn ? (
               <>
                 <Link href="/dashboard">Dashboard</Link>
-                <UserButton afterSignOutUrl="/" />
+                {/* <UserButton afterSignOutUrl="/" /> */}
               </>
             ) : (
               <Link href="/sign-in">Log in</Link>
